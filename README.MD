@@ -1,7 +1,7 @@
-# Data Notification Blocker for Samsung
+# Data Notification Blocker for Samsung (Android 9+)
 
 ## Introduction
-This application serves as a quick fix for Samsung devices to prevent annoying notifications every time you disable your data.(I faced this when I switched from my lovely google Pixel phone to Samsung)
+This application is a quick fix for Samsung devices to prevent annoying notifications whenever you disable your data. (I faced this when I switched from my lovely Google Pixel phone to Samsung)
 It is completely safe, and the code is straightforward and easy to inspect in the `app/src` folders. The app automatically runs every time you boot the system.
 
 ## Features
