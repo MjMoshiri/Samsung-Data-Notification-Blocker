@@ -10,19 +10,14 @@ class MyNotificationListenerService : NotificationListenerService() {
     companion object {
         private const val TARGET_PACKAGE = "com.samsung.android.app.telephonyui"
         private const val TARGET_CHANNEL = "channel_mobileNetworksAlert"
-        private const val LOG_TAG = "NotificationListener"
-        private const val SNOOZE_DURATION_MS = 1000 * 60 * 24L
+        private const val SNOOZE_DURATION_MS = 1000 * 60 * 24 * 1000L
     }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         super.onNotificationPosted(sbn)
-        Log.d(LOG_TAG, "Notification Posted from: ${sbn.packageName}")
-
         if (sbn.packageName == TARGET_PACKAGE && sbn.notification.channelId == TARGET_CHANNEL) {
-            Log.d(LOG_TAG, "Notification from package: ${sbn.packageName}, Channel ID: ${sbn.notification.channelId}")
             val canClear = sbn.isClearable
             if (canClear) {
-                Log.d(LOG_TAG, "Canceling Notification: ${sbn.key}")
                 cancelNotification(sbn.key)
             } else {
                 snoozeNotification(sbn.key, SNOOZE_DURATION_MS)
